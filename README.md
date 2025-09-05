@@ -16,7 +16,7 @@ A free and open-source trading bot built on the AxiomTrade API with comprehensiv
 - **Real-time WebSocket**: Live price feeds and transaction monitoring
 - **Discord Integration**: Notifications and bot control via Discord
 - **Database Tracking**: Persistent storage for trades, profits, and analytics
-- **Backtesting**: Test strategies against historical data
+- **Backtesting**: Test strategies against historical dataaweso
 - **Configuration Management**: Flexible YAML-based configuration
 
 ## 📁 Project Structure

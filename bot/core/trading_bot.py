@@ -20,9 +20,33 @@ from .event_manager import EventManager, EventType
 # AxiomTrade API
 from axiomtradeapi import AxiomTradeClient
 
-# Strategy imports (will be created)
-from ..risk_management.risk_manager import RiskManager
-from ..notifications.notification_manager import NotificationManager
+# Strategy imports
+try:
+    from ..risk_management.risk_manager import RiskManager
+    from ..notifications.notification_manager import NotificationManager
+except ImportError:
+    # Fallback imports for development
+    class RiskManager:
+        def __init__(self, config):
+            self.config = config
+        async def can_execute_trade(self, signal):
+            return True
+    
+    class NotificationManager:
+        def __init__(self, config):
+            self.config = config
+        async def start(self):
+            pass
+        async def stop(self):
+            pass
+        async def send_bot_notification(self, title, message, level):
+            pass
+        async def send_trade_notification(self, signal, success, tx_hash):
+            pass
+        async def send_risk_notification(self, title, message, level):
+            pass
+        async def send_error_notification(self, message, details):
+            pass
 
 class AxiomTradingBot:
     """
