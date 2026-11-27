@@ -19,11 +19,11 @@ trading:
 
 # Token Sniping Configuration
 sniping:
-  enabled: true                  # Enable token sniping
+  enabled: false                 # SAFETY: keep discovery disabled until manual approval is implemented
   min_liquidity: 5.0            # Minimum liquidity (SOL)
   max_buy_tax: 10.0             # Maximum buy tax %
   max_sell_tax: 10.0            # Maximum sell tax %
-  auto_sell_delay: 60           # Auto-sell delay in seconds (0 = disabled)
+  auto_sell_delay: 0            # SAFETY: automatic selling disabled
   blacklisted_tokens: []        # List of token addresses to avoid
   whitelisted_tokens: []        # List of allowed tokens (empty = all allowed)
 
