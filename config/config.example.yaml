@@ -29,10 +29,8 @@ sniping:
 
 # Wallet Tracking Configuration  
 wallet_tracking:
-  enabled: true
-  target_wallets:               # Wallets to track and copy
-    - "11111111111111111111111111111112"  # Example wallet
-    # Add more wallet addresses here
+  enabled: false                 # SAFETY: wallet copy-trading disabled
+  target_wallets: []             # SAFETY: no wallets configured
   copy_percentage: 50.0         # Percentage of their trade size to copy
   min_trade_size: 0.01          # Minimum trade size to copy (SOL)
   max_copy_amount: 1.0          # Maximum amount to copy per trade (SOL)
