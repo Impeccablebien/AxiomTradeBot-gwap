@@ -303,6 +303,20 @@ class AxiomTradingBot:
     
     async def execute_trade(self, signal: TradeSignal) -> bool:
         """
+        Execute a trading signal.
+
+        SAFETY LOCK: live execution is intentionally disabled until the
+        Discord manual-approval workflow has been implemented and tested.
+        Do not remove this guard to enable live trading.
+        """
+        self.logger.warning(
+            "TRADE BLOCKED by safety lock (%s %s). "
+            "Manual Discord approval is not implemented yet.",
+            signal.action, signal.token_address
+        )
+        return False
+
+        """
         Execute a trading signal
         
         Args:
